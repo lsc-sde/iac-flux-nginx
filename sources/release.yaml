@@ -16,7 +16,7 @@ spec:
   interval: 5m0s
   install:
     remediation:
-      retries: 5
+      retries: 10
   values:
     controller:
       replicaCount: 2
