@@ -1,0 +1,28 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: nginx
+  namespace: cluster-config
+spec:
+  targetNamespace: nginx
+  releaseName: ingress-nginx
+  chart:
+    spec:
+      chart: ingress-nginx
+      sourceRef:
+        kind: HelmRepository
+        name: nginx
+        namespace: cluster-config
+  interval: 5m0s
+  install:
+    remediation:
+      retries: 5
+  values:
+    controller:
+      replicaCount: 2
+      service:
+        annotations: 
+          "service.beta.kubernetes.io/azure-load-balancer-internal" : "true"
+          "service.beta.kubernetes.io/port_80_no_probe_rule" : "true"
+          "service.beta.kubernetes.io/port_443_no_probe_rule" : "true"
+          "service.beta.kubernetes.io/azure-private-dns-prefix" : "nginx prefect jupyter"
