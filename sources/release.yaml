@@ -13,13 +13,19 @@ spec:
         kind: HelmRepository
         name: nginx
         namespace: nginx
-  interval: 5m0s
+  interval: 1m0s
   install:
     remediation:
       retries: -1
+      interval: 1m
+      timout: 15m
   upgrade:
     remediation:
       retries: -1
+      interval: 1m
+      timeout: 15m
+  driftDetection:
+    mode: enabled
   values:
     controller:
       replicaCount: 2
