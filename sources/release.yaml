@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: nginx
@@ -24,8 +24,6 @@ spec:
       retries: -1
       interval: 1m
       timeout: 15m
-  driftDetection:
-    mode: enabled
   values:
     controller:
       replicaCount: 2
