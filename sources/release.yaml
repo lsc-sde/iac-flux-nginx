@@ -17,6 +17,9 @@ spec:
   install:
     remediation:
       retries: 10
+  upgrade:
+    remediation:
+      retries: 10
   values:
     controller:
       replicaCount: 2
@@ -26,3 +29,5 @@ spec:
           "service.beta.kubernetes.io/port_80_no_probe_rule" : "true"
           "service.beta.kubernetes.io/port_443_no_probe_rule" : "true"
           "service.beta.kubernetes.io/azure-private-dns-prefix" : "nginx prefect jupyter"
+      admissionWebhooks:
+        enabled: false
