@@ -17,13 +17,9 @@ spec:
   install:
     remediation:
       retries: -1
-      interval: 1m
-      timout: 15m
   upgrade:
     remediation:
       retries: -1
-      interval: 1m
-      timeout: 15m
   values:
     controller:
       replicaCount: 2
