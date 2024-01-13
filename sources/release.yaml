@@ -31,5 +31,5 @@ spec:
           "service.beta.kubernetes.io/azure-private-dns-prefix" : "nginx prefect jupyter"
 
       admissionWebhooks:
-        enabled: false
+        enabled: true
         timeoutSeconds: 30
