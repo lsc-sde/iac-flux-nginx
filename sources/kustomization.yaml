@@ -4,4 +4,4 @@ namespace: nginx
 resources:
   - repository.yaml
   - release.yaml
-  #- networkpolicy.yaml
+  - networkpolicy.yaml

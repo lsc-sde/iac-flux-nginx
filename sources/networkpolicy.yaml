@@ -16,7 +16,7 @@ metadata:
   name: egress
   namespace: nginx
 spec:
-  ingress:
+  egress:
   - {}
   podSelector: {}
   policyTypes:
