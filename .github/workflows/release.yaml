@@ -8,3 +8,5 @@ on:
 jobs:
   semver:
     uses: lsc-sde/lsc-sde/.github/workflows/semver.yaml@main
+    with:
+      useConfigFile: true
