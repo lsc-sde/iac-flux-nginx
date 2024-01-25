@@ -11,6 +11,7 @@ jobs:
     with:
       useConfigFile: true
 
+  # Creates a release branch based on symver and pushes it
   flux:
     uses: lsc-sde/lsc-sde/.github/workflows/flux.yaml@main
     needs: semver
