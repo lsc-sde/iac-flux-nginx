@@ -18,7 +18,5 @@ jobs:
     needs: semver
     with:
       symver: ${{ needs.semver.outputs.GitVersion_SemVer }}
-    secrets:
-      token: ${{ secrets.REPOS_RW_TOKEN }}
 
   
