@@ -1,0 +1,9 @@
+name: Create Release
+
+on:
+  workflow_dispatch:
+    inputs: []
+
+jobs:
+  semver:
+    uses: lsc-sde/lsc-sde/.github/workflows/semver.yaml@main
