@@ -12,11 +12,31 @@ jobs:
     with:
       useConfigFile: true
 
-  # Creates a release branch based on symver and pushes it
-  flux:
+  sandbox:
     uses: lsc-sde/lsc-sde/.github/workflows/flux.yaml@main
     needs: semver
     with:
       symver: ${{ needs.semver.outputs.GitVersion_SemVer }}
+      environment: sandbox
+      prefix: environments/sandbox
     secrets: inherit
-  
+
+  dev:
+    uses: lsc-sde/lsc-sde/.github/workflows/flux.yaml@main
+    needs: semver
+    with:
+      symver: ${{ needs.semver.outputs.GitVersion_SemVer }}
+      environment: dev
+      prefix: environments/dev
+    secrets: inherit
+
+    
+  production:
+    uses: lsc-sde/lsc-sde/.github/workflows/flux.yaml@main
+    needs: semver
+    with:
+      symver: ${{ needs.semver.outputs.GitVersion_SemVer }}
+      environment: production
+      prefix: release
+    secrets: inherit
+    
