@@ -23,7 +23,9 @@ jobs:
 
   dev:
     uses: lsc-sde/lsc-sde/.github/workflows/flux.yaml@main
-    needs: semver
+    needs: 
+    - semver
+    - sandbox
     with:
       symver: ${{ needs.semver.outputs.GitVersion_SemVer }}
       environment: dev
@@ -33,7 +35,9 @@ jobs:
     
   production:
     uses: lsc-sde/lsc-sde/.github/workflows/flux.yaml@main
-    needs: semver
+    needs:
+    - semver
+    - dev
     with:
       symver: ${{ needs.semver.outputs.GitVersion_SemVer }}
       environment: production
