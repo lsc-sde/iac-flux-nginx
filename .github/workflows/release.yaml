@@ -10,3 +10,11 @@ jobs:
     uses: lsc-sde/lsc-sde/.github/workflows/semver.yaml@main
     with:
       useConfigFile: true
+
+  flux:
+    uses: lsc-sde/lsc-sde/.github/workflows/flux.yaml@main
+    needs: semver
+    with:
+      symver: ${{ needs.semver.outputs.GitVersion_SemVer }}
+
+  
