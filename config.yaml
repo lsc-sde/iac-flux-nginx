@@ -1,0 +1,16 @@
+controller:
+  config:
+    proxy-buffers: "4 16k"
+    proxy-buffer-size: "16k"
+
+  replicaCount: 2
+    service:
+      annotations: 
+        "service.beta.kubernetes.io/azure-load-balancer-internal" : "true"
+        "service.beta.kubernetes.io/port_80_no_probe_rule" : "true"
+        "service.beta.kubernetes.io/port_443_no_probe_rule" : "true"
+        "xlscsde.nhs.uk/dns-record" : "nginx"
+
+    admissionWebhooks:
+      enabled: true
+      timeoutSeconds: 30

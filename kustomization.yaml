@@ -5,3 +5,9 @@ resources:
   - repository.yaml
   - release.yaml
   - networkpolicy.yaml
+configMapGenerator:
+  - name: nginx-config
+    files:
+      - values.yaml=config.yaml
+generatorOptions:
+  disableNameSuffixHash: true
