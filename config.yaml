@@ -1,5 +1,8 @@
 controller:
   allowSnippetAnnotations: true
+  ingressClass:
+    name: ${nginx_ingress_class_name}
+
   config:
     proxy-buffers: "4 16k"
     proxy-buffer-size: "16k"
