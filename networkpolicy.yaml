@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
   name: ingress
-  namespace: nginx
+  namespace: ${nginx_namespace}
 spec:
   ingress:
   - {}
@@ -14,7 +14,7 @@ apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
   name: egress
-  namespace: nginx
+  namespace: ${nginx_namespace}
 spec:
   egress:
   - {}
