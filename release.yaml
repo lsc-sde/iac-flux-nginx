@@ -3,7 +3,7 @@ kind: HelmRelease
 metadata:
   name: nginx
 spec:
-  targetNamespace: ${nginx_namespace}
+  targetNamespace: ${ingress_nginx_namespace}
   releaseName: ingress-nginx
   chart:
     spec:
@@ -12,7 +12,7 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: nginx
-        namespace: ${nginx_namespace}
+        namespace: ${ingress_nginx_namespace}
   interval: 1m0s
   install:
     remediation:
